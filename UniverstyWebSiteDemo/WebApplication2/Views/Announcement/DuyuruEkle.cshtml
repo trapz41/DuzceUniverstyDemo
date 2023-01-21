@@ -1,0 +1,22 @@
+﻿@model WebApplication2.Models.Duyurular
+@{
+    ViewBag.Title = "DuyuruEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">DuyuruEkle</h2>
+<hr />
+@using (Html.BeginForm("DuyuruYaz", "Announcement", FormMethod.Post))
+{
+    
+    <br />
+    <h1>BAŞLIK</h1>
+    @Html.TextBoxFor(x => x.baslik, new { @class = "form-control" })
+    <br />
+    <h1>Duyuru</h1>
+    @Html.TextAreaFor(x => x.duyuru, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success"> Duyuru Ekle </button>
+
+}
+

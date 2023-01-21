@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" >
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet"href="~/Content/css/Login.css"/>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active"> Sign In </h2>
+            <h2 class="inactive underlineHover">Sign Up </h2>
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="~/Content/Image/admin.jpg" id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post)) {
+            <form>
+                <input type="text"name="kullaniciadi" placeholder="UserName">
+                <input type="password"name="sifre" placeholder="Password">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+            }
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

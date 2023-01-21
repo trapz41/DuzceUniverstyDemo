@@ -1,0 +1,29 @@
+﻿@using WebApplication2.Models
+@model List<Duyurular>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Id</th>
+        <th>Baslık</th>
+        <th>Duyuru</th>
+        <th>Güncelle</th>
+        <td><a href="~/Announcement/DuyuruEkle" class="btn btn-primary">Duyuru Ekle</a></td>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.baslik</td>
+            <td>@x.duyuru</td>
+            <td><a href="~/Announcement/AnasayfaGetir/@x.id" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="~/Announcement/DuyuruSil/@x.id" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+
